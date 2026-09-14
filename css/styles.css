@@ -1,22 +1,99 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
-    background-color: #fff;
-    margin: 0;
-    padding: 2em;
-    height: 90vh;
-    background: url(../img/icon.png) 95% 95% no-repeat;
-    background-size: 20vh;
-}
-h1 {
-    font-size: 1.5em;
+@font-face{
+    font-family: 'Inter';
+    src: url('fonts/Inter/Inter-VariableFont_opsz,wght.ttf');
     font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Inter';
+    src: url('fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf');
+    font-weight: normal;
+    font-style: italic;
+}
+
+:root{
+    --color-background-primary: #E9F1F6;
+        
+    --color-ui-primary: #1a1a1a;
+    --color-ui-secondary: white;
+    --color-ui-primary-disabled: #727272;
+    --color-ui-secondary-disabled: #E5E5EA;
+
+    --color-shade: rgba(0, 0, 0, 0.25);
+    --color-highlight: rgba(255, 255, 255, 0.15);
+}
+
+body {
+    font-family: Inter, Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: var(--color-background-primary);
     margin: 0;
     padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }
-p {
-    width: 80vw;
+
+/* --------------- Custom Components --------------------- */
+.tButton, .tOption, .tRadio {
+        font-size: 14pt;
+        font-weight: 600;
+        text-align: center;
+        vertical-align: middle;
 }
-a {
-    color: #369;
+
+.tOption, .tRadio{
+        position: relative;
+        letter-spacing: -2%;
 }
+
+.tOption > input,
+.tOption > input + *,
+.tRadio > input, 
+.tRadio > input + *{
+        position: absolute;
+        display: inline-block;
+        top: 0; bottom: 0;
+        left: 0; right: 0;
+        overflow: hidden;
+        z-index: 1;
+        border-radius: 4px;
+}
+
+.tOption > input,
+.tRadio > input{
+        z-index: 2;
+}
+
+.tButton{
+        border: none;
+        border-radius: 4px;
+        color: var(--color-ui-primary);
+        background: var(--color-ui-secondary);
+        box-shadow: 2px 2px 4px 0 var(--color-shade);
+}
+
+.tButton.main,
+.tOption > input + *,
+.tRadio > input + *{
+        color: var(--color-ui-secondary);
+        background: var(--color-ui-primary);
+        box-shadow: 2px 2px 4px 0 var(--color-shade),
+                inset 2px 2px 4px 0 var(--color-highlight);
+
+}
+
+.tOption > input:checked + *,
+.tRadio > input:checked + *{
+        color: var(--color-ui-primary-disabled);
+        background: var(--color-ui-secondary-disabled);
+        box-shadow: inset 2px 2px 4px 0 var(--color-shade);
+}
+
+.tButton:disabled{
+        opacity: 40%;
+}
+
+
