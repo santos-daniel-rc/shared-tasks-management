@@ -1,15 +1,15 @@
 {
-  "name": "Github Page PWA",
-  "short_name": "GPPWA",
-  "description": "Github Page as a Progressive Web App",
-  "scope": "/github-page-pwa/",
-  "start_url": "/github-page-pwa/",
-  "background_color": "#ffffff",
-  "theme_color": "#ffffff",
+  "name": "Workspaces DRC",
+  "short_name": "WDRC",
+  "description": "A PWA for managing and assigning group tasks",
+  "scope": "/shared-tasks-management/",
+  "start_url": "/shared-tasks-management/",
+  "background_color": "#E9F1F6",
+  "theme_color": "#E9F1F6",
   "display": "standalone", 
   "icons": [
       {
-        "src": "/github-page-pwa/img/icon.png",
+        "src": "/shared-tasks-management/img/icon.png",
         "type": "image/png",
         "sizes": "700x700"
       }
